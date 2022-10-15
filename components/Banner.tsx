@@ -16,7 +16,7 @@ const Banner = ({
   return (
     <div className="flex flex-wrap justify-center items-center m-2.5">
       <Image src={imgUrl} width={500} height={300} alt="Banner" />
-      <div className="p-[5px]">
+      <div className="p-[5px] ml-5">
         <h1 className="text-gray-500 text-sm font-medium">{purpose}</h1>
         <h1 className=" text-3xl font-bold">
           {title1}

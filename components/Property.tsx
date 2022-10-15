@@ -12,7 +12,7 @@ import defaultImage from "./../assets/imgs/house.JPG";
 const Property = ({ property }: { property: PropertiesInterface }) => {
   return (
     <Link href={`/property/${property.externalID}`} passHref>
-      <div className="flex flex-wrap w-[420px] p-[5px] pt-0 justify-start cursor-pointer">
+      <div className="flex flex-wrap w-[420px] p-[5px] mb-5 pt-0 justify-start cursor-pointer">
         <div>
           <Image
             src={property.coverPhoto ? property.coverPhoto.url : defaultImage}

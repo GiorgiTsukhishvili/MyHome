@@ -1,7 +1,16 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-const Layout = () => {
-  return <div>Layout</div>;
+const Layout = ({ children }: { children: ReactNode }) => {
+  return (
+    <div>
+      <title>Real Estate</title>
+      <div className="max-w-[1280px] m-auto">
+        <header>Navbar</header>
+        <main>{children}</main>
+        <footer>Footer</footer>
+      </div>
+    </div>
+  );
 };
 
 export default Layout;
