@@ -1,11 +1,14 @@
 import React, { ReactNode } from "react";
+import Navbar from "./Navbar";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       <title>Real Estate</title>
       <div className="max-w-[1280px] m-auto">
-        <header>Navbar</header>
+        <header>
+          <Navbar />
+        </header>
         <main>{children}</main>
         <footer>Footer</footer>
       </div>
