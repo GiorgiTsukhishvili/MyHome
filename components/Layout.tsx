@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 const Layout = ({ children }: { children: ReactNode }) => {
@@ -10,7 +11,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <Navbar />
         </header>
         <main>{children}</main>
-        <footer>Footer</footer>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </div>
   );
