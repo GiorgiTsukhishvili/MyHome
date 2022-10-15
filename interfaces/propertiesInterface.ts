@@ -19,7 +19,7 @@ interface PropertiesInner {
   matchedWords: string[];
 }
 
-interface PropertiesInterface {
+export interface PropertiesInterface {
   id: number;
   ownerID: number;
   userExternalID: string;
