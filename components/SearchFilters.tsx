@@ -4,32 +4,43 @@ import { MdCancel } from "react-icons/md";
 import Image from "next/image";
 import { filterData, getFilterValues } from "../utils/filterData";
 
+interface FilterInt {
+  [x: string]: string;
+}
+
+const filters = filterData;
+
 const SearchFilters = () => {
-  const [filters, setFilters] = useState(filterData);
+  const [chosenFilters, setChosenFilters] = useState<FilterInt[]>([]);
+
   const router = useRouter();
 
-  const searchProperties = (filterValues: { [x: string]: string }) => {
+  const searchProperties = () => {
     const path = router.pathname;
 
     const { query } = router;
 
-    const values = getFilterValues(filterValues);
-
-    values.forEach((item) => {
-      query[item.name] = item.value;
+    chosenFilters.forEach((filterValues) => {
+      query[Object.keys(filterValues)[0]] = Object.values(filterValues)[0];
     });
 
     router.push({ pathname: path, query });
   };
 
+  const handleChange = (filterValues: { [x: string]: string }) => {
+    setChosenFilters((prevFilters) => {
+      return [...prevFilters, filterValues];
+    });
+  };
+
   return (
-    <div className="flex bg-gray-100 p-[10px] py-5 justify-center flex-wrap">
+    <div className="flex bg-gray-100 p-[10px] py-5 justify-center items-center flex-wrap">
       {filters.map((filter) => (
         <div key={filter.queryName} className="mr-5 mb-5 flex flex-col">
           <label htmlFor="">{filter.placeholder}</label>
           <select
             onChange={(e) =>
-              searchProperties({ [filter.queryName]: e.target.value })
+              handleChange({ [filter.queryName]: e.target.value })
             }
             className="p-[2px]"
           >
@@ -41,6 +52,12 @@ const SearchFilters = () => {
           </select>
         </div>
       ))}
+      <button
+        onClick={searchProperties}
+        className="bg-blue-500 px-3 h-6 rounded-[8px] text-white"
+      >
+        Filter
+      </button>
     </div>
   );
 };
