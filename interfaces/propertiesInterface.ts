@@ -19,6 +19,15 @@ interface PropertiesInner {
   matchedWords: string[];
 }
 
+export interface PropertiesPhotos {
+  id: number;
+  externalID: string;
+  title: string | null;
+  orderIndex: number;
+  nimaScore: number;
+  url: string;
+}
+
 export interface PropertiesInterface {
   id: number;
   ownerID: number;
@@ -140,6 +149,9 @@ export interface PropertiesInterface {
     };
     keywords: PropertiesInner[];
   };
+  description?: string;
+  amenities?: string;
+  photos?: PropertiesPhotos[];
 }
 
 export interface PropertiesForRentAndSale {

@@ -1,8 +1,7 @@
 import Banner from "../components/Banner";
 import Property from "../components/Property";
 import { PropertiesForRentAndSale } from "../interfaces/propertiesInterface";
-import { baseUrl } from "../utils/fetchApi";
-import { fetchApi } from "../utils/fetchApi";
+import { baseUrl, fetchApi } from "../utils/fetchApi";
 
 const Home = ({
   propertiesForRent,
