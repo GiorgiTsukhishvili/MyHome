@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/nprogress": "^0.2.0",
     "axios": "^1.1.2",
     "framer-motion": "^7.5.3",
     "millify": "^5.0.1",

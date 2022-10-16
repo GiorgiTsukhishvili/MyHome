@@ -28,6 +28,10 @@ export interface PropertiesPhotos {
   url: string;
 }
 
+interface Amenities {
+  amenities: { text: string }[];
+}
+
 export interface PropertiesInterface {
   id: number;
   ownerID: number;
@@ -150,7 +154,7 @@ export interface PropertiesInterface {
     keywords: PropertiesInner[];
   };
   description?: string;
-  amenities?: string;
+  amenities?: Amenities[];
   photos?: PropertiesPhotos[];
 }
 

@@ -53,7 +53,7 @@ const Property = ({
           <h1 className="text-lg">{title}</h1>
         </div>
         <h1 className="text-gray-600 mt-[2px]">{description}</h1>
-        <div className="flex flex-wrap uppercase justify-between">
+        <div className="flex flex-wrap uppercase justify-between my-3">
           <div className="flex justify-between w-[400px] border-b-[1px] border-gray-100 p-[3px]">
             <h1>Type</h1>
             <h1 className="font-bold">{type}</h1>
@@ -69,7 +69,23 @@ const Property = ({
             </div>
           )}
         </div>
-        <div></div>
+        <div>
+          {amenities?.length && (
+            <h1 className="text-2xl font-semibold mt-[5px]">Amenities</h1>
+          )}
+          <div className="flex flex-wrap">
+            {amenities?.map((item) =>
+              item.amenities.map((amenitie) => (
+                <h1
+                  key={amenitie.text}
+                  className="font-bold text-blue-400 text-lg p-[2px] bg-gray-200 m-[1px] border-[5px]"
+                >
+                  {amenitie.text}
+                </h1>
+              ))
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
